@@ -1,10 +1,9 @@
+import Home from "./pages/home/Home";
+
 
 function App() {
-  return (
-    <div > hello mother fuckers
-      
-    </div>
-  );
+  return <Home/>
 }
 
 export default App;
+
