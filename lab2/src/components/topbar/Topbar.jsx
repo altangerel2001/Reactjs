@@ -1,5 +1,5 @@
 import "./topbar.css"
-import {Search} from "@mui/icons-material"
+import { Search } from "@mui/icons-material"
 export default function Topbar() {
   return (
   <div className="topbarContainer"> 
