@@ -33,7 +33,7 @@
     align-items:  center;
  }
 
- .searchIcon{
+ .searchicon{
     font-size: 20px !important;
     margin-left: 10px;
  }
@@ -59,9 +59,9 @@
    font-size: 14px;
    cursor: pointer;
  }
- .topbaricon{
-display: flex;
- }
+.topbaricon{
+   display: flex;
+}
  .topbaritem{
    margin-right: 15px;
    cursor: pointer;
@@ -74,6 +74,12 @@ display: flex;
    border-radius: 50%;
    color: white;
    position: absolute;
+   top: -10;
+   right: -10;
+   display: flex;
+   align-items: center;
+   justify-items: center;
+   font-size: 12px;
  }
 
  .topbarimg{

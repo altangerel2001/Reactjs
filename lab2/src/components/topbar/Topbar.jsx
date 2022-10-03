@@ -5,22 +5,22 @@ export default function Topbar() {
   <div className="topbarContainer"> 
   <div className="topbarLeft"> <span className="logo">lamasocail</span></div>
   <div className="topbarCenter"> <div className="searchbar">
-    <Search className="searchicon" />
-    <input placeholder="Search for freind, post or video" classname="Searchinput"/>
+    <Search className="searchIcon" />
+    <input placeholder="search for freind, post or video" classname="searchInput"/>
     </div></div>
   <div className="topbarRight">
     <div className="topbarLinks"> 
     <span className="topbarLinks">Homepage</span>
     <span className="topbarLinks">Timeline</span>
     </div>
-    <div className="topbaricons">
+    <div className="topbaricon">
      <div className="topbariconsitem">
       <Person/>
-      <span className="topbariconbadge">100</span>
+      <span className="topbariconbadge">1</span>
      </div>
      <div className="topbariconsitem">
       <Notifications/>
-      <span className="topbariconbadge">12</span>
+      <span className="topbariconbadge">1</span>
      </div>
      <div className="topbariconsitem">
       <Chat/>
