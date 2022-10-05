@@ -5,6 +5,7 @@
     "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.7",
     "install": "^0.13.0",
-    "npm": "^8.19.2"
+    "npm": "^8.19.2",
+    "react-accessible-accordion": "^5.0.0"
   }
 }
