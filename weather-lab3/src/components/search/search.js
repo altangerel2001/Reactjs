@@ -13,14 +13,15 @@ const Search = ({ onSearchChange }) => {
                 return {
                     options: response.data.map((city) => {
                         return{
-                            value: , 
-                            label: , 
+                            value: `${city.latitude} ${city.longitude}`,
+                     
+                            label: `${city.name}, ${city.countryCode}` , 
                         }
                     }
                     )
                 }
             }
-            )
+         )
             .catch(err => console.error(err));
     }
 
