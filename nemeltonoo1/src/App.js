@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import {UseState} from 'react'
 import './App.css';
+import { useState} from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+ const App =() =>{
+    const [time,setTime] = useState(0);
 
+    const getTime = () =>{
+        fetch('http://utils.mandakh.org:8000/utils/',{
+        method: "POST",
+        headers: {
+            'Content-type' : 'application/json',
+        },
+        body: JSON.stringify({
+            action:"gettime"
+        }),
+    })
+    .then((resp) => resp.json())
+    .then((data) => {
+        setTime(data["data"]["time"]);
+    })
+    .catch((err) => {
+        console.log(err.message);
+    })
+ }
+return(
+  <div>
+    <button className="py-3 px-6 sm:w-[60%] my-4"  onClick={() => {getTime()}}>tsagharah</button>
+    <div>{time}</div>
+  </div>
+)
+ }
 export default App;
