@@ -1,4 +1,3 @@
-import {UseState} from 'react'
 import './App.css';
 import { useState} from "react";
 
@@ -25,7 +24,7 @@ import { useState} from "react";
  }
 return(
   <div>
-    <button className="py-3 px-6 sm:w-[60%] my-4"  onClick={() => {getTime()}}>tsagharah</button>
+    <button className="py-6 px-12 sm:w-[60%] my-8"  onClick={() => {getTime()}}>SERVERIIN TSAG HARAH</button>
     <div>{time}</div>
   </div>
 )
