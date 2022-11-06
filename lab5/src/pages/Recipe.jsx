@@ -7,7 +7,7 @@ import React from 'react'
 function Recipe() { 
   let params = useParams()
   const [details, setDetails] = useState({})
-  const [activeTab, setActiveTab] = useState('instructions')
+  const [activeTab, setActiveTab] = useState({})
 
 
   const fetchDetails = async () => {
@@ -22,21 +22,30 @@ function Recipe() {
     fetchDetails()
   },[params.name])
 
-  return (
-    <DetailWrapper>
+  return <DetailWrapper>
       <div>
         <h2>{details.title}</h2>
         <img src={details.image} alt="" />
       </div>
       <Info>
-        <Button className={activeTab === "Instructions" ? "active" : ""} onClick={() => setActiveTab("instructions")}> Instructions </Button>
-        <Button className={activeTab === 'Ingredients' ? 'active' : ''} onClick={() => setActiveTab('Ingredients')}> Ingredients </Button>
+        <Button className={activeTab === "Instructions" ? "active" : ""} onClick={() => setActiveTab("Instructions")}>Instructions</Button>
+        <Button className={activeTab === "Ingredients" ? "active" : ""} onClick={() => setActiveTab("Ingredients")}>Ingredients</Button>
+        {activeTab === 'Instructions' && (
         <div>
           <h3 dangerouslySetInnerHTML={{__html: details.summary}}></h3>
+          <h3 dangerouslySetInnerHTML={{__html: details.Instructions}}></h3>
         </div>
+        )}
+         {activeTab === 'Ingredients' && (
+          <ul>
+          {details.extendedIngredients.map((ingredient) => (
+              <li key={ingredient.id}>{ingredient.original}</li>
+          ))}
+      </ul>
+  )}
       </Info>
       </DetailWrapper>
-  )
+  
 }
 
 
@@ -44,10 +53,10 @@ const DetailWrapper = styled.div`
   margin-top: 10rem;
   margin-bottom: 5rem;
   display: flex;
-  .active{
-    background: linear-gradient(35deg, #494949, #313131)
-    color: white;
-  }
+    .active {
+      background: linear-gradient(35deg, #494949, #313131);
+      color: white;
+    }
   h2 {
     margin-bottom: 2rem;
 
@@ -69,8 +78,8 @@ const Button = styled.button`
   font-weight: 600;
 `
 const Info = styled.div`
-margin-left: 10rem;
-`
+  margin-left: 10rem;
+`;
 
 
 export default Recipe
