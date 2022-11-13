@@ -71,7 +71,7 @@ export const Users = [
     },
     {
       id: 3,
-      desc: "Duu darchihjee",
+      desc: "Helllo broders",
       photo: "assets/post/3.jpeg",
       date: "1 hour ago",
       userId: 3,
