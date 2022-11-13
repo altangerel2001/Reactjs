@@ -1,13 +1,13 @@
 
 import './App.css';
 import Search from './components/search/search';
-import CurrentWeather from "./components/search/current-weather/current-weather";
+import CurrentWeather from './components/current-weather/current-weather';
 import { WEATHER_API_URL, WEATHER_API_KEY } from "./api";
 import { useState } from 'react'
-import Forecast from "./components/search/forecast/Forecast";
+import Forecast from './components/forecast/Forecast';
 function App() {
-  const [currentWeather, setCurrentWeather] = useState();
-  const [forecast, setForecast] = useState();
+  const [currentWeather, setCurrentWeather] = useState(null);
+  const [forecast, setForecast] = useState(null);
 
 
    const handleOnSearchChange = (searchData) => {
