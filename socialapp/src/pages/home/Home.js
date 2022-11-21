@@ -13,30 +13,24 @@ export default function Home() {
     const bodyChiglel = {
       action: "chiglel",
     };
-    sendRequest(urlLookup, bodyChiglel);
+    sendRequest(urlLookup, bodyChiglel),then ((data) => setDatas(data));
   }, []);
+  
+  const DisplayData = datas && datas.data.map((naruto) => {
+    return(
+      <p>
+      <button onClick={() => console.log(naruto.chigleldaraalal)}>{naruto.chiglelname}</button>
+      </p>
+    )
+  }
+   )
 
-  const sendRequest = async (url, body) => {
-    await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(body),
-    })
-      .then((res) => res.json())
-      .then(async (response) => {
-        setDatas(response);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  };
-
+ 
 
   return (
     <>
-    <text>{JSON.stringify(datas)}</text>
+     {DisplayData}
+    <text>{data && JSON.stringify(datas)}</text>
       <Topbar />
       <div className="homeContainer">
         <Sidebar />
