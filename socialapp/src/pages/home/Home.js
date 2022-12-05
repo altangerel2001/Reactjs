@@ -4,34 +4,44 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Topbar from "../../components/topbar/Topbar";
 import "./home.css";
 import { useState , useEffect} from "react";
+import {hariu} from "../../getdata/dummy"
 
 export default function Home() {
 
-  const [datas, setDatas] = useState();
-  const urlLookup = "http://btax.mandakh.org:8000/lookup/";
-  useEffect(() => {
-    const bodyChiglel = {
-      action: "chiglel",
-    };
-    sendRequest(urlLookup, bodyChiglel),then ((data) => setDatas(data));
-  }, []);
+  // const [datas, setDatas] = useState();
+  // const [api, contextHolder] = notification.useNotification();
+
+  // useEffect(() => {
+  //   const bodyChiglel = {
+  //     action: "aimagsum",
+  //   };
+  //   sendRequest(urlLookup, bodyChiglel).then((data) => setDatas(data));
+  // },[]);
   
-  const DisplayData = datas && datas.data.map((naruto) => {
-    return(
-      <p>
-      <button onClick={() => console.log(naruto.chigleldaraalal)}>{naruto.chiglelname}</button>
-      </p>
-    )
-  }
-   )
+  // const openNotification = (desc) => {
+  //   notification.open({
+  //     message: 'аймгийн нэр',
+  //     description:
+  //     desc,
+  //     onClick: () => {
+  //       console.log('notif darsan!');
+  //     },
+  //   });
+  // };
 
- 
-
+  // const DisplayData = datas && datas.data.map((amg) =>{
+  //   return (
+  //     <p key ={amg.aimagdaraalal} >
+  //       <Button type="dashed" key ={amg.aimagdaraalal} onClick={() => openNotification(amg.aimagname)}>{amg.aimagname}</Button>
+        
+  //     </p>
+  //   )
+  // };
   return (
     <>
-     {DisplayData}
-    <text>{data && JSON.stringify(datas)}</text>
-      <Topbar />
+     {/* {DisplayData}
+    {<p>{data && JSON.stringify(datas)}</p>} */}
+      <Topbar ilgeesen = {hariu}/>
       <div className="homeContainer">
         <Sidebar />
         <Feed />

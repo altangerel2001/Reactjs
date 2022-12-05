@@ -1,8 +1,9 @@
 import "./topbar.css";
 import { Search, Person, Chat, Notifications } from "@mui/icons-material";
 
-export default function Topbar() {
-  return (
+export default function Topbar({ilgeesen}) {
+  return (<>
+    {JSON.stringify(ilgeesen)}
     <div className="topbarContainer">
       <div className="topbarLeft">
         <span className="logo">Ag4socialmedianetwork</span>
@@ -23,20 +24,21 @@ export default function Topbar() {
         </div>
         <div className="topbarIcons">
           <div className="topbarIconItem">
-            <Person />
-            <span className="topbarIconBadge">1</span>
+            <Person ilgeesen/>
+            <span className="topbarIconBadge">{JSON.stringify(ilgeesen.data.notification)}</span>
           </div>
           <div className="topbarIconItem">
-            <Chat />
-            <span className="topbarIconBadge">2</span>
+            <Chat ilgeesen/>
+            <span className="topbarIconBadge">  {JSON.stringify(ilgeesen.data.chat)}</span>
           </div>
           <div className="topbarIconItem">
-            <Notifications />
-            <span className="topbarIconBadge">1</span>
+            <Notifications ilgeesen/>
+           
+            <span className="topbarIconBadge"> {JSON.stringify(ilgeesen.data.freindrequest)}</span>
           </div>
         </div>
         <img src="/assets/person/1.jpeg" alt="" className="topbarImg" />
       </div>
-    </div>
+    </div></>
   );
 }
