@@ -5,6 +5,11 @@ import Topbar from "../../components/topbar/Topbar";
 import "./home.css";
 import { useState , useEffect} from "react";
 import {hariu} from "../../getdata/dummy"
+// import {sendRequest, urlLookup} from "../../settings/Settings"
+// import { Button, Divider, notification, Space } from 'antd';
+// const Context = React.createContext({
+//   name: 'Default',
+// });
 
 export default function Home() {
 
@@ -36,7 +41,7 @@ export default function Home() {
         
   //     </p>
   //   )
-  // };
+  // });
   return (
     <>
      {/* {DisplayData}
